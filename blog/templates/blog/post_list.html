@@ -1,12 +1,19 @@
 <html>
     <head>
-        <style>@font-face {font-family:"Bodoni XT"; src:url('BodoniXT.ttf');} </style>
         <center><title>Allison's Blog</title></center>
     </head>
     <body>
         <div>
             <h1><a href="">Welcome to my blog!</a></h1>
         </div>
+
+        {% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
 
         <div>
             <p>published: 14.06.2014, 12:14</p>
